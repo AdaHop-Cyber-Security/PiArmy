@@ -16,6 +16,6 @@
    Comprehensive logging is implemented, with configurable log levels and output options to aid debugging and analysis.
 
 6. **Disclaimer:**  
-   A detailed disclaimer reminds users that unauthorized scanning is illegal and that the author is not responsible for any misuse.
+   Unauthorized scanning is illegal and the author is not responsible for any misuse.
 
 Happy scanning!
