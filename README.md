@@ -1,50 +1,21 @@
-### How to Use
+### Explanation
 
-1. **Port Scanning:**  
-   Use the `scan` sub-command to perform advanced TCP/UDP port scanning (with banner grabbing, OS detection, and rate‑limiting).  
-   Example:  
-   ```bash
-   python advanced_net_tool.py scan --targets 192.168.1.0/24 --ports 22-443 --protocol both --os-detect --banner
-   ```
+1. **Modular Design & Sub‑Commands:**  
+   The tool is divided into sub‑commands (scan, smb, dns, ldap, rdp, ftp, ssh, smtp, discover) so that you can select the desired functionality without running unnecessary modules.
 
-2. **SMB Operations:**  
-   Enumerate SMB shares or perform credential spraying using the `smb` sub-command.  
-   Example (enumeration):  
-   ```bash
-   python advanced_net_tool.py smb --action enum --target 192.168.1.10
-   ```
+2. **Advanced Scanning:**  
+   The core scanner supports both TCP and UDP scans, banner grabbing, and service fingerprinting. It uses concurrent threads with rate‑limiting to balance speed with network safety.
 
-3. **DNS Lookups:**  
-   Reverse‑resolve IPs using the `dns` sub-command.  
-   Example:  
-   ```bash
-   python advanced_net_tool.py dns --targets 8.8.8.8,8.8.4.4
-   ```
+3. **Protocol-Specific Modules:**  
+   Modules for SMB, DNS, LDAP, RDP, FTP, SSH, and SMTP are provided, each using appropriate libraries or socket-level interactions.
 
-4. **LDAP Enumeration:**  
-   Connect to an LDAP server and (optionally) search a base DN using the `ldap` sub-command.  
-   Example:  
-   ```bash
-   python advanced_net_tool.py ldap --target 192.168.1.20 --search-base "dc=example,dc=com"
-   ```
+4. **Auto-Discovery:**  
+   The “discover” sub‑command automatically scans a target network using a default list of common ports (if none are specified) and reports live hosts with discovered services. Optionally, it performs OS detection.
 
-5. **RDP Enumeration:**  
-   Check an RDP service by sending a basic negotiation request using the `rdp` sub-command.  
-   Example:  
-   ```bash
-   python advanced_net_tool.py rdp --target 192.168.1.30
-   ```
+5. **Logging and Error Handling:**  
+   Comprehensive logging is implemented, with configurable log levels and output options to aid debugging and analysis.
 
-6. **FTP Enumeration:**  
-   Enumerate an FTP server (with anonymous login by default) using the `ftp` sub-command.  
-   Example:  
-   ```bash
-   python advanced_net_tool.py ftp --target 192.168.1.40
-   ```
+6. **Disclaimer:**  
+   A detailed disclaimer reminds users that unauthorized scanning is illegal and that the author is not responsible for any misuse.
 
-7. **SSH Enumeration:**  
-   Retrieve the SSH host key fingerprint and optionally test credentials using the `ssh` sub-command.  
-   Example:  
-   ```bash
-   python advanced_net_tool.py ssh --target 192.168.1.50 --username user --password secret
-   ```
+Happy scanning!
