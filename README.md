@@ -1,4 +1,4 @@
-### How to Use This Tool
+### How to Use
 
 1. **Port Scanning:**  
    Use the `scan` sub-command to perform advanced TCP/UDP port scanning (with banner grabbing, OS detection, and rate‑limiting).  
