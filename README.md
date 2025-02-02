@@ -48,5 +48,3 @@
    ```bash
    python advanced_net_tool.py ssh --target 192.168.1.50 --username user --password secret
    ```
-
-This code is organized, highly modular, and built with extensibility, safety, and advanced logging in mind—truly a network tool “Swiss Army Knife” for professional reconnaissance and penetration testing.
